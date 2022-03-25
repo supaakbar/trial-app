@@ -2,20 +2,23 @@
     <head>
         <title>Trial App</title>
     </head>
-    <body onload="osCheck()">
-        <h1>Hello!</h1>
-        <p id="OS"></p>
+    <body>
+        <style>
+            table {border: 1px solid #000000;border-collapse: collapse; margin: 0 auto;  padding: 0px;table-layout: fixed;min-width: 30%;}table th {text-align: center;padding: 8px;border: 1px solid #000000;background:#3558f4;color:#FFFFFF;font-weight:bold;text-align:center}table td{padding: 8px;border: 1px solid #000000;}table tr{background-color: #dddddd;color:#000000;text-align:center;}
+        </style>
+        <table>
+        <tr>
+            <th colspan='2' >Trial App</th>
+        
+        </tr>
+        <tr>
+            <td>Current OS</td>
+            <td>{{ OS }}</td>
+        </tr>
+        <tr>
+            <td>Current Version</td>
+            <td>{{ VERSION }}</td>
+        </tr>
+        </table>
     </body>
-    <script> 
-        function osCheck() { 
-            var OSName="Unknown OS";
-            if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
-            if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
-            if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
-            if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
-              
-            // Display the OS name
-            document.getElementById("OS").innerHTML = OSName;
-        } 
-    </script>
 </html>  
