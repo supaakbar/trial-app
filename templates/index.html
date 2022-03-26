@@ -4,24 +4,33 @@
     </head>
     <body>
         <style>
-            table {border: 1px solid #000000;border-collapse: collapse; margin: 0 auto;  padding: 0px;table-layout: fixed;min-width: 30%;}table th {text-align: center;padding: 8px;border: 1px solid #000000;background:#3558f4;color:#FFFFFF;font-weight:bold;text-align:center}table td{padding: 8px;border: 1px solid #000000;}table tr{background-color: #dddddd;color:#000000;text-align:center;}
+            table {border: 1px solid #000000;border-collapse: collapse; margin: 0 auto;  padding: 0px;table-layout: fixed;min-width: 30%;}table th {text-align: center;padding: 8px;border: 1px solid #000000;background:#3558f4;color:#FFFFFF;font-weight:bold;text-align:center}table td{padding: 8px;border: 1px solid #000000;}table tr{background-color: #dddddd;color:#000000;text-align:left;}
         </style>
+        <center>
+            <br><h2>Xendit - Trial - Supanji Akbar - 23-03-2022 - {{ DATE }}</h2><br>
+        </center> 
         <table>
         <tr>
             <th colspan='2' >Trial App</th>
         
         </tr>
         <tr>
-            <td>Current OS</td>
+            <td>OS Version</td>
             <td>{{ OS }}</td>
         </tr>
         <tr>
-            <td>Current Version</td>
+            <td>App Version</td>
             <td>{{ VERSION }}</td>
         </tr>
+        <tr>
+            <td>CPU Usage (%)</td>
+            <td>{{ CPU }}</td>
+        </tr>
+        <tr>
+            <td>MEM Usage (MB)</td>
+            <td>{{ MEM }}</td>
+        </tr>
         </table>
-        <center>
-            <br><h2>Xendit - Trial - Supanji Akbar - 23-03-2022 - {{ DATE }}</h2><br>
-        </center> 
+        
     </body>
 </html>  
