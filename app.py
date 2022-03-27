@@ -8,13 +8,13 @@ import sys
 
 app = Flask(__name__)
 
-# linux command export env
-cmdGetContainerID = 'export CONTAINER_ID=$(cat /proc/self/cgroup | grep -o  -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/")'
-os.system(cmdGetContainerID)
+# # linux command export env
+# cmdGetContainerID = 'export CONTAINER_ID=$(cat /proc/self/cgroup | grep -o  -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/")'
+# os.system(cmdGetContainerID)
 
-# docker command
-client = docker.from_env()
-stats = client.containers.get(os.environ['CONTAINER_ID']).stats(stream=False)
+# # docker command
+# client = docker.from_env()
+# stats = client.containers.get(os.environ['CONTAINER_ID']).stats(stream=False)
 
 # logging
 logging.basicConfig(filename='./logs/app.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s : %(message)s')
@@ -26,7 +26,7 @@ def index():
     getVersion = str(os.environ['APP_VERSION'])
     getDate = str(datetime.today().strftime('%d-%m-%Y'))
     app.logger.info('USER ACCESS /')
-    return render_template('index.html', OS=getOs, VERSION=getVersion, DATE=getDate, CPU=getCpu(), MEM=getMem())
+    return render_template('index.html', OS=getOs, VERSION=getVersion, DATE=getDate)
 
 @app.route("/getcpu/", methods=['GET'])
 def getCpu():
